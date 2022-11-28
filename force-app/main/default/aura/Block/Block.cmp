@@ -1,0 +1,10 @@
+<aura:component>
+    <aura:attribute name="label" type="string" />
+    <aura:attribute name="open" type="boolean" />
+
+    <div>
+        <div>
+            {!v.label}
+        </div>
+    </div>
+</aura:component>	
