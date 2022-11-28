@@ -1,0 +1,38 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+
+    <aura:attribute name="options" type="List" default="[
+    {'label': 'Easy', 'value': 'easy'},
+    {'label': 'Medium', 'value': 'medium'},
+    {'label': 'Hard', 'value': 'hard'},
+    ]"/>
+
+    <aura:attribute name="selectedMode" type="string" />
+    <aura:attribute name="Flag" type="boolean" default="false"/>
+    <lightning:card title="Word Shuffle">
+        <lightning:layout horizontalAlign="center" multipleRows="true">
+            <lightning:layoutItem padding="around-small">
+                <lightning:combobox 
+                    variant="label-hidden"
+                    aura:id="comboBoxValue" 
+                    name="progress" 
+                    label="Game Mode" 
+                    value="Select Mode" 
+                    placeholder="Select Game Mode" 
+                    options="{! v.options }" />
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <!-- Start New Game Button -->
+                <lightning:button variant="brand" label="Start New Game" title="Start New Game" onclick="{! c.startGame }" />
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <!-- Reshuffle the Game -->
+                <lightning:button label="Reshuffle" title="Reshuffle" onclick="{! c.handleClick }"/>
+            </lightning:layoutItem>
+            <aura:if isTrue="{!v.Flag}">
+                <lightning:layoutItem size="12">
+                    <c:Board mode="{! v.selectedMode}"></c:Board>  
+                </lightning:layoutItem>
+            </aura:if>
+        </lightning:layout>  
+    </lightning:card>
+</aura:component>	
