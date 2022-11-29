@@ -35,4 +35,4 @@
             </aura:if>
         </lightning:layout>  
     </lightning:card>
-</aura:component>	
+</aura:component>

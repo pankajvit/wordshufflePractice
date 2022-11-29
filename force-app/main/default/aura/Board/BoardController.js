@@ -17,14 +17,5 @@
         let winWord = helper.getWinWord(wordsList);
         component.set("v.winWord", winWord);
         console.log("winning word is :"+winWord);
-    },
-
-    handleComponentEvent : function(component, event, helper){
-        const value = event.getParam("v.value");
-        if(value === component.get("v.winword")){
-            // user win
-        } else{
-            // user lose
-        }
     }
 })

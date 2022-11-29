@@ -5,9 +5,6 @@
        const label = component.get("v.value");
        if(open === false){
             component.set("v.open", true);
-            let compEvent = cmp.getEvent("onclick");
-            compEvent.setParams({"value" : label});
-            compEvent.fire();
        } 
     }
 })
