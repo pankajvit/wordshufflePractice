@@ -26,10 +26,12 @@
             // user win
             component.set("v.result", "YOU WIN !!");
             console.log("you win !!!");
+            helper.disableBoard(component);
         } else if(count === 3){
             // user lose
             component.set("v.result", "YOU LOOSE !!!");
             console.log("you loose !!");
+            helper.disableBoard(component);
         }
         component.set("v.count", count);
     }
