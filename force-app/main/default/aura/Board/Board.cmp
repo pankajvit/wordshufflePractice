@@ -9,6 +9,8 @@
 
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
 
+    <aura:method name="startGame" action="{!c.doInit}" description="start New Game"></aura:method>
+
     <aura:handler name="onclick" event="c:BlockClickEvent" action="{!c.handleBlockComponentEvent}" /> 
 
 

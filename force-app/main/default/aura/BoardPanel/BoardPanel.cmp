@@ -30,7 +30,7 @@
             </lightning:layoutItem>
             <aura:if isTrue="{!v.Flag}">
                 <lightning:layoutItem size="12">
-                    <c:Board mode="{! v.selectedMode}"></c:Board>  
+                    <c:Board aura:id="boardcomp" mode="{! v.selectedMode}"></c:Board>  
                 </lightning:layoutItem>
             </aura:if>
         </lightning:layout>  

@@ -17,6 +17,9 @@
         let winWord = helper.getWinWord(wordsList);
         component.set("v.winWord", winWord);
         console.log("winning word is :"+winWord);
+
+        // reset the board
+        helper.resetBoard(component);
     },
 
     handleBlockComponentEvent : function(component, event, helper){
