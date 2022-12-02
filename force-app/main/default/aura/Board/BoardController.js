@@ -30,12 +30,21 @@
             component.set("v.result", "YOU WIN !!");
             console.log("you win !!!");
             helper.disableBoard(component);
+            helper.fireResultEvent("win");
         } else if(count === 3){
             // user lose
             component.set("v.result", "YOU LOOSE !!!");
             console.log("you loose !!");
             helper.disableBoard(component);
+            helper.fireResultEvent("lose");
         }
         component.set("v.count", count);
+    },
+
+    reshuffleBoard : function(component, event, helper){
+        const words = component.get("v.words");
+        const randomizedWords = helper.randomizeArray(words);
+        component.set("v.words", randomizedWords);
+        helper.resetBoard(component);
     }
 })

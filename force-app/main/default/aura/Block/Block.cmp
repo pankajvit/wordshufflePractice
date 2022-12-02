@@ -2,6 +2,10 @@
     <aura:attribute name="label" type="string" />
     <aura:attribute name="open" type="boolean" default="false"/>
 
+    <ltng:require
+        scripts="{!$Resource.FitText}"
+        afterScriptsLoaded="{!c.scriptsLoaded}" />
+
     <aura:registerEvent name="onclick" type="c:BlockClickEvent" />
     <div class="board-block slds-align_absolute-center slds-var-m-around_medium slds-var-p-around_medium" 
     onclick="{!c.blockClickHandler}">
@@ -11,4 +15,5 @@
             </div>
         </aura:if>     
     </div>
+
 </aura:component>

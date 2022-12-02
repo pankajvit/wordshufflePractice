@@ -11,6 +11,8 @@
 
     <aura:method name="startGame" action="{!c.doInit}" description="start New Game"></aura:method>
 
+    <aura:method name="reshuffleBoard" action="{!c.reshuffleBoard}" description="Reshuffle Board"></aura:method>
+
     <aura:handler name="onclick" event="c:BlockClickEvent" action="{!c.handleBlockComponentEvent}" /> 
 
 
@@ -33,9 +35,9 @@
 
         
         <lightning:layout multipleRows="true">
-            <aura:iteration items="{! v.words}" var="word">
+            <aura:iteration items="{! v.words}" var="wordObj">
                 <lightning:layoutItem size="{! v.blockSize}" padding="around-small">
-                    <c:Block label="{!word}"></c:Block>
+                    <c:Block label="{!wordObj.word}" open="{!wordObj.open}"></c:Block>
                 </lightning:layoutItem>
             </aura:iteration>
         </lightning:layout>

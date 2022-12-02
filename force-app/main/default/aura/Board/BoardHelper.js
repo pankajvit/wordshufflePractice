@@ -106,7 +106,12 @@
         ];
 
         wordsArray = this.randomizeArray(wordsArray);
-        return wordsArray.slice(0, count);
+        // open = false property
+        const wordObjArray = wordsArray.map( (element) => {
+            return { word : element, open : false}
+        });
+        // return requested words
+        return wordObjArray.slice(0, count);
     },
 
     randomizeArray : function(arr){
@@ -123,7 +128,7 @@
 
     getWinWord : function(arr){
         const randomIndex = Math.floor(Math.random() * arr.length);
-        return arr[randomIndex];
+        return arr[randomIndex].word;
     },
 
     disableBoard : function(component){
@@ -140,5 +145,11 @@
         component.set("v.count", 0);
         // reset the result
         component.set("v.result", ""); 
-    }
+    },
+
+    fireResultEvent : function(resultValue){
+        const appevent = $A.get("e.c:ResultApplicationEvent");
+        appevent.setParam({result : resultValue});
+        appevent.fire();
+    } 
 })

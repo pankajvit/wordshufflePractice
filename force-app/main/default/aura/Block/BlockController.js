@@ -10,5 +10,10 @@
             compEvent.setParams({value : label});
             compEvent.fire();
        } 
+    },
+
+    scriptsLoaded : function(component){
+        const divElement = component.getElement(".board-block");
+        fitText(divElement);
     }
 })

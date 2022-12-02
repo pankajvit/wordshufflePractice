@@ -12,15 +12,25 @@
             // call aura method
             boardComp.startGame(); 
         }
-        
-        
-
-        
-
         alert("Selected game mode is :"+comboBoxValue);
 
         if(comboBoxValue != null){
             component.set("v.Flag", "true");
         } 
+    },
+
+    reshuffleBoard : function(component, event, helper){
+        const boardComp = component.find("boardcomp");
+        boardComp.reshuffleBoard();
+        component.set("v.reshuffleDisabled", true);
+    },
+
+    onResultHandler : function(component, event, helper){
+        const result = event.getParam("result");
+        if(result === "win"){
+            component.set("v.reshuffleDisabled", true);
+        } else {
+            component.set("v.reshuffleDisabled", false);
+        }
     }
 })
